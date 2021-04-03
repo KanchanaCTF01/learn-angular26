@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, OnInit, ViewChild } from '@angular/core';
+import { ProductListComponent } from './productlist/productlist.component';
+import { BackendService } from './backend.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'learn-angular23';
+export class AppComponent implements OnInit {
+  constructor (private backendService : BackendService) {}
+  
+  @ViewChild ('productList')
+  productList: ProductListComponent;
+
+  ngOnInit(): void {
+    this.productList.products = this.backendService.getProducts();
+  }
+    
 }

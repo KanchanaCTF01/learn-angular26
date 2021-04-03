@@ -1,0 +1,10 @@
+<div class = "box" [class.selected]="isSelected" >
+    <h3>{{ product.name }}</h3>
+    <p>
+        <span>Price: {{ product.price }} Baht</span>
+    </p>
+    <p>
+        <button (click)="select()">Select</button>
+    </p>
+
+</div>
