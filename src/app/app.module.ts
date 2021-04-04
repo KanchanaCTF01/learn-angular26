@@ -6,6 +6,8 @@ import { BackendService } from './backend.service';
 import { CatalogModule } from './catalog/catalog.module';
 import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     CatalogModule,
-    HomeModule
+    HomeModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
